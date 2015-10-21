@@ -9,7 +9,7 @@ class SpotToken < Sinatra::Base
   enable :sessions
 
   use OmniAuth::Builder do
-    provider :spotify, "9664357146fe44a5a9c0c1247f623e76", File.read("secret")
+    provider :spotify, "9664357146fe44a5a9c0c1247f623e76", File.read("secret"), scope: "playlist-modify-public"
   end
 
   get "/" do
